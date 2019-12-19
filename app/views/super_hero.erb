@@ -1,1 +1,24 @@
+<h1>Create a Team and Heroes!</h1>
 
+<form action="/team" method="POST">
+  <p>
+    <label for='team_name'>Team Name:</label>
+    <input id="team_name" type="text" name="team[name]">
+  </p>
+  <p>
+    <label for='motto'>Team Motto:</label>
+    <input id="motto" type="text" name="team[motto]">
+  </p>
+  <%3.times do |i|%>
+    <h2>Hero <%=i + 1%></h2>
+    <% hero = ['name','power','biography']  %>
+    <% hero.each do |atr| %>
+      <p>
+        <label for='member<%=i + 1%>_<%=atr%>'>Hero <%=atr%>:</label>
+        <input id="member<%=i + 1%>_<%=atr%>" type="text" name="hero[][<%=atr%>]">
+      </p>
+    <% end %>
+  <% end %>
+  
+  <input id="Submit" type="submit">
+</form>
