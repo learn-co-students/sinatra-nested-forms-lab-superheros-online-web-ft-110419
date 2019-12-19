@@ -1,5 +1,5 @@
-class Team 
-  attr_accessor :name, :motto 
+class Hero
+  attr_accessor :name, :power,:biography 
   
   def initialize(args={}) 
     args.each{ |k,v| self.send("#{k}=",v) }
