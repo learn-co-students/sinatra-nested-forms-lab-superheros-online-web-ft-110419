@@ -7,6 +7,8 @@ class App < Sinatra::Base
         erb :super_hero
     end 
     
+    # When posting
+    # it will be on the display erb file
     post '/teams' do 
         @teams = Team.new(params[:team])
         params['team']['members'].each do |mem|
